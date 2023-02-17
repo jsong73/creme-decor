@@ -1,0 +1,27 @@
+[
+    {
+      "productName": "Mid-Century Chair",
+      "description": "White linen wooden chair",
+      "image": "",
+      "price": "150",
+      "quantity": "4",
+      "category": "Chairs"
+    },
+    {
+      "productName": "Mid-Century Sectional",
+      "description": "Cream four piece sectional",
+      "image": "",
+      "price": "1500",
+      "quantity": "1",
+      "category": "Sofas"
+    },
+    {
+      "productName": "Mid-Century Table",
+      "description": "Wooden coffee table",
+      "image": "",
+      "price": "250",
+      "quantity": "2",
+      "category": "Tables"
+    }
+  ]
+  
