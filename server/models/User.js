@@ -1,5 +1,6 @@
 const {Schema, model} = require("mongoose");
 const Order = require("./Order")
+const bcrypt = require('bcrypt');
 
 const validateEmail = function(email) {
     const re =
@@ -31,12 +32,7 @@ const userSchema = new Schema(
             required: true,
             minlength: 5,
         },
-        orders: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: "Order",
-            },
-        ],
+        orders: [Order.schema],
     },
     {
         toJSON: {
@@ -46,6 +42,20 @@ const userSchema = new Schema(
         versionKey: false,
     }
 );
+
+
+userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+    next();
+  });
+  
+userSchema.methods.isCorrectPassword = async function (password) {
+    await bcrypt.compare(password, this.password);
+  };
+  
 
 const User = model("User", userSchema);
 
