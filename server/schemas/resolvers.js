@@ -11,8 +11,8 @@ const resolvers = {
         user: async (parent, { email }) => {
             return User.findOne({ email }).populate("orders");
         },
-        order: async (parent, { orderId }, context) => {
-            return Order.findOne({ _id: orderId }).populate("products")
+        order: async (parent, { orderId }) => {
+            return Order.findOne({ _id: orderId });
         }
     }
 }
