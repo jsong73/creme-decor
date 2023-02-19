@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import { useMutation } from "@apollo/client"
-import { LOGIN_USER } from "../utils/mutations"
-import Auth from "../utils/auth"
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({
@@ -9,7 +10,7 @@ const Login = (props) => {
     password: "",
   });
 
-  const [login, {error, data}] = useMutation(LOGIN_USER);
+  const [login, {error}] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
     const {name, value} = event.target;
@@ -26,7 +27,7 @@ const Login = (props) => {
       const { data } = await login({
         variables: {...formState}
       });
-
+      console.log(data)
       Auth.login(data.login.token);
     } catch (error) {
       console.log(error);
@@ -42,6 +43,8 @@ const Login = (props) => {
   return (
     <div>
         <h1> Log in </h1>
+        
+        <Link to="/signup">Or continue to signup</Link>
 
           <form onSubmit={loginFormHandler}>
             <label> Email: </label>
@@ -50,19 +53,21 @@ const Login = (props) => {
                name="email"
                type="email"
                value={formState.email}
+               autoComplete="off"
                onChange={handleChange} />
 
             <label> Password: </label>
               <input
-               placeholder="Password"
+               placeholder="*****"
                name="password"
                type="password"
                value={formState.password}
+               autoComplete="off"
                onChange={handleChange} />
 
               
             {error ? (
-              <div> Credentials are invalid. </div>
+              <div> {error.message} </div>
             ) : null}
             <button type="submit"> Submit </button>
 
