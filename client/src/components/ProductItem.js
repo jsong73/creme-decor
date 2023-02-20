@@ -6,13 +6,15 @@ const ProductItem = ({
     image,
     productName,
     price,
-    quantity
 }) => {
-console.log(_id)
-console.log(image)
-console.log(productName)
-console.log(price)
-console.log(quantity)
+// console.log(_id)
+// console.log(image)
+// console.log(productName)
+// console.log(price)
+
+const style = {
+    width:500,
+}
 
 return(
     <div>
@@ -20,11 +22,11 @@ return(
             <img 
             alt={productName}
             src={`/images/${image}`}
+            style={style}
             />
             <h1> {productName} </h1>
             </Link>
 
-            <div>{quantity}</div>
             <div>${price}</div>
     </div>
 )

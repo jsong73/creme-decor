@@ -23,6 +23,7 @@ function ProductList() {
     function filterProducts() {
         if(!currentCategory){
             return state.products;
+    
         }
 
         return state.products.filter(
@@ -40,7 +41,6 @@ function ProductList() {
                     image={product.image}
                     productName={product.productName}
                     price={product.price}
-                    quantity={product.quantity}
                     />
                 ))}
             </div>
