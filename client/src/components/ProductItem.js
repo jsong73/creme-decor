@@ -5,7 +5,7 @@ const ProductItem = ({
     _id,
     image,
     productName,
-    price,
+    price
 }) => {
 // console.log(_id)
 // console.log(image)

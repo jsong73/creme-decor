@@ -27,6 +27,7 @@ function CategoryMenu() {
             type: UPDATE_CURRENT_CATEGORY,
             currentCategory: id,
         });
+        // console.log(id)
     };
 
 
