@@ -29,7 +29,6 @@ function ProductList() {
             (product) => product.category === currentCategory
 
         );
-       
     }
   
     return(
