@@ -39,7 +39,7 @@ query getProducts($category: ID) {
         image
         price
         quantity
-        categories{
+        category{
             _id
         }
     }

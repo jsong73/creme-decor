@@ -23,7 +23,7 @@ const typeDefs = gql`
         image: String,
         quantity: Int
         price: Float
-        categories: Category
+        category: Category
     }
 
     type Category {
