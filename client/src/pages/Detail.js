@@ -1,9 +1,11 @@
 import React , {useState , useEffect } from "react";
 import { useQuery } from "@apollo/client";
-import { UPDATE_PRODUCTS } from "../utils/actions";
+import { UPDATE_PRODUCTS , UPDATE_CART_QUANTITY, ADD_TO_CART, REMOVE_FROM_CART } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { useStoreContext } from "../utils/GlobalState";
 import { useParams , Link } from "react-router-dom"
+import { idbPromise } from "../utils/helpers"
+import Cart from "../components/Cart";
 
 const Detail = () => {
 
@@ -14,7 +16,7 @@ const Detail = () => {
 
   const { data } = useQuery(QUERY_PRODUCTS);
 
-  const { products } = state;
+  const { products , cart} = state;
 
   useEffect(() => {
     if(products.length) {
@@ -39,8 +41,27 @@ const Detail = () => {
         _id: id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
+      idbPromise("cart", "put", {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...currentProduct, purchaseQuantity: 1 },
+      });
+      idbPromise("cart", "put", {...currentProduct, purchaseQuantity: 1 })
     }
-  }
+  };
+
+  const removeFromCart = () => {
+    dispatch({
+      type: REMOVE_FROM_CART,
+      _id: currentProduct._id,
+    });
+
+    idbPromise("cart", "delete", {...currentProduct });
+  };
 
   return (
     <div>
@@ -61,10 +82,15 @@ const Detail = () => {
       <p>
             <p> ${currentProduct.price} </p>
             <p> {currentProduct.quantity} left in stock</p>
-            <button> Add to Cart </button>
-            <button> Remove from Cart </button>
+            <button onClick= {addToCart}> Add to Cart </button>
+            <button 
+              disabled={!cart.find((p) => p._id === currentProduct._id)}
+              onClick= {removeFromCart}> 
+            Remove from Cart
+            </button>
           </p>
 
+    <Cart />
 
     </div>
   );
