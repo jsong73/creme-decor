@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES } from "../utils/queries";
 import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../utils/actions";
 
+
 function CategoryMenu() {
     const [state, dispatch] = useStoreContext();
 
@@ -19,8 +20,6 @@ function CategoryMenu() {
             });
         }
     }, [categoryData, dispatch]);
-
-    // console.log(categoryData)
 
     const clickHandler = (id) => {
         dispatch({
@@ -40,7 +39,7 @@ function CategoryMenu() {
                     clickHandler(item._id);
                 }}
                 >
-                    {item.categoryName}
+                {item.categoryName}
                 </button>
             ))}
         </div>
