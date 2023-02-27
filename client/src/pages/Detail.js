@@ -27,7 +27,20 @@ const Detail = () => {
     }
   }, [products, data, dispatch, id]);
 
-  console.log(currentProduct)
+  const style = {
+    width:600,
+  } 
+
+  const addToCart = () => {
+    const itemInCart = cart.find((cartItem) => cartItem._id === id);
+    if(itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: id,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+    }
+  }
 
   return (
     <div>
@@ -39,12 +52,15 @@ const Detail = () => {
       <img 
         src={`/images/${currentProduct.image}`}
         alt={currentProduct.productName} 
+        style={style}
       />
 
       <div> {currentProduct.description}</div>
 
+
       <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+            <p> ${currentProduct.price} </p>
+            <p> {currentProduct.quantity} left in stock</p>
             <button> Add to Cart </button>
             <button> Remove from Cart </button>
           </p>
