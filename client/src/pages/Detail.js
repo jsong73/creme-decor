@@ -79,7 +79,7 @@ const Detail = () => {
       <div> {currentProduct.description}</div>
 
 
-      <p>
+      <div>
             <p> ${currentProduct.price} </p>
             <p> {currentProduct.quantity} left in stock</p>
             <button onClick= {addToCart}> Add to Cart </button>
@@ -88,7 +88,7 @@ const Detail = () => {
               onClick= {removeFromCart}> 
             Remove from Cart
             </button>
-          </p>
+      </div>
 
     <Cart />
 
