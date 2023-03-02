@@ -6,8 +6,33 @@ import { useStoreContext } from "../utils/GlobalState";
 import { useParams , Link } from "react-router-dom"
 import { idbPromise } from "../utils/helpers"
 import Cart from "../components/Cart";
+import Modal from "react-modal";
+
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+Modal.setAppElement("#root");
 
 const Detail = () => {
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+  
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
@@ -63,6 +88,7 @@ const Detail = () => {
     idbPromise("cart", "delete", {...currentProduct });
   };
 
+
   return (
     <div>
       
@@ -82,7 +108,7 @@ const Detail = () => {
       <div>
             <p> ${currentProduct.price} </p>
             <p> {currentProduct.quantity} left in stock</p>
-            <button onClick= {addToCart}> Add to Cart </button>
+            <button onClick= {() => {addToCart() ; openModal()}}> Add to Cart </button>
             <button 
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick= {removeFromCart}> 
@@ -90,7 +116,15 @@ const Detail = () => {
             </button>
       </div>
 
-    <Cart />
+      <Modal
+          id="modal"
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="shopping cart">
+      <Cart />
+
+      </Modal>
 
     </div>
   );

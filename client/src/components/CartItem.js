@@ -5,7 +5,11 @@ import { idbPromise } from "../utils/helpers";
 
 const CartItem = ({ item }) => {
 
-    const [state, dispatch ] = useStoreContext();
+    const style = {
+        width:200,
+    }
+    
+    const [ dispatch ] = useStoreContext();
     
     const removeFromCart = item => {
         dispatch({
@@ -41,9 +45,11 @@ const CartItem = ({ item }) => {
             <img
                 src={`/images/${item.image}`}
                 alt={item.image}
+                style={style}
             />
 
-            <div> {item.name}, ${item.price}</div>
+            <div> {item.productName} </div>
+            <div>${item.price}</div>
 
             <span> Quantity: </span>
             <input

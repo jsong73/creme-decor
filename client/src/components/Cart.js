@@ -1,19 +1,19 @@
 import { useLazyQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_CHECKOUT } from "../utils/queries";
-import React , {useEffect} from "react";
+import React , {useEffect } from "react";
 import { idbPromise } from "../utils/helpers";
 import { ADD_MULTIPLE_TO_CART , TOGGLE_CART} from "../utils/actions";
 import Auth from "../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import CartItem from "../components/CartItem";
 
-
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
     const [state, dispatch] = useStoreContext();
     const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
 
     useEffect(() => {
         if(data) {
@@ -60,21 +60,10 @@ const Cart = () => {
         });
     }
 
-    if (!state.cartOpen) {
-    return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
-          🛒
-        </span>
-      </div>
-    );
-  }
   
   return(
     <div>
-    <div onClick={toggleCart}>
-        [close]
-    </div>
+        <div onClick={toggleCart}> Close</div>
 
     <h1>Cart</h1>
 
@@ -96,6 +85,7 @@ const Cart = () => {
 
         <div> Nothing in your cart as of yet! </div> 
     )}
+
 
     </div>
   )}
