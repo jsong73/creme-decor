@@ -33,10 +33,7 @@ const Cart = () => {
             getCart();
         }
     }, [state.cart.length, dispatch]);
-
-    function toggleCart() {
-        dispatch({ type: TOGGLE_CART });
-    }
+    
 
     function calculateTotal() {
         let sum = 0;
@@ -56,14 +53,27 @@ const Cart = () => {
         });
 
         getCheckout({
-            variables: {products: productIds },
+            variables: { products: productIds },
         });
     }
 
-  
+    function toggleCart() {
+        dispatch({ type: TOGGLE_CART });
+    }
+
+    // if (!state.cartOpen) {
+    //     return (
+    //       <div className="cart-closed" onClick={toggleCart}>
+
+    //       </div>
+    //     );
+    //   }
+
   return(
     <div>
-        <div onClick={toggleCart}> Close</div>
+      <button className="close" onClick={toggleCart}>
+    Close
+      </button>
 
     <h1>Cart</h1>
 
@@ -73,12 +83,12 @@ const Cart = () => {
                 <CartItem key={item._id} item={item} />
             ))}
 
-            <div> Subtotal: ${calculateTotal()}</div>
+            <p> Subtotal: ${calculateTotal()}</p>
 
             {Auth.loggedIn() ? (
                 <button onClick={handleCheckout}>Checkout</button>
             ) : (
-                <span>(log in to checkout)</span>
+                <p> Please log in to checkout </p>
             )}
             </div>
     ) : (
