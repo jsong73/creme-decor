@@ -9,7 +9,7 @@ const CartItem = ({ item }) => {
         width:200,
     }
     
-    const [ dispatch ] = useStoreContext();
+    const [ state, dispatch ] = useStoreContext();
     
     const removeFromCart = item => {
         dispatch({
@@ -29,6 +29,7 @@ const CartItem = ({ item }) => {
             });
 
             idbPromise("cart", "delete", {...item });
+
         } else {
             dispatch({
                 type: UPDATE_CART_QUANTITY,
@@ -39,6 +40,8 @@ const CartItem = ({ item }) => {
             idbPromise("cart", "put", {...item, purchaseQuantity: parseInt(value)});
         }
     }
+
+    console.log(state)
 
     return(
         <div>
@@ -59,8 +62,8 @@ const CartItem = ({ item }) => {
              onChange={handleChange}
              />
 
-             <div onClick={() => removeFromCart(item)}>  
-             </div>
+             <button onClick={() => removeFromCart(item)}> X
+             </button>
 
 
         </div>

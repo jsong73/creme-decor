@@ -43,12 +43,12 @@ export const reducers = (state = initialState, action) => {
                 return{
                     ...state,
                     cartOpen: true,
-                    cart: state.cart.map((product) => {
+                    cart: state.cart.map(product => {
                         if( action._id === product._id) {
                             product.purchaseQuantity = action.purchaseQuantity;
                         }
-                        return product;
-                    }),
+                        return product
+                    })
                 };
 
             case ADD_TO_CART:
@@ -65,14 +65,14 @@ export const reducers = (state = initialState, action) => {
                 };
             
             case REMOVE_FROM_CART:
-            let updatedState = state.cart.filter((product) => {
+            let updatedState = state.cart.filter(product => {
                 return product._id !== action._id;
                 });
 
                 return {
                     ...state,
                     cartOpen: updatedState.length > 0,
-                    cart: updatedState,
+                    cart: updatedState
                 };
             
             case EMPTY_CART:
