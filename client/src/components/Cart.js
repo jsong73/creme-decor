@@ -3,7 +3,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_CHECKOUT } from "../utils/queries";
 import React , {useEffect } from "react";
 import { idbPromise } from "../utils/helpers";
-import { ADD_MULTIPLE_TO_CART , TOGGLE_CART} from "../utils/actions";
+import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import Auth from "../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import CartItem from "../components/CartItem";
@@ -57,23 +57,9 @@ const Cart = () => {
         });
     }
 
-    function toggleCart() {
-        dispatch({ type: TOGGLE_CART });
-    }
-
-    // if (!state.cartOpen) {
-    //     return (
-    //       <div className="cart-closed" onClick={toggleCart}>
-
-    //       </div>
-    //     );
-    //   }
 
   return(
     <div>
-      <button className="close" onClick={toggleCart}>
-    Close
-      </button>
 
     <h1>Cart</h1>
 
