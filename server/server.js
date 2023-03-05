@@ -4,7 +4,8 @@ const db = require("./config/connection")
 const { ApolloServer } = require("apollo-server-express");
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
-
+require("dotenv").config();
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
 
 const PORT = process.env.PORT || 3004;
 
