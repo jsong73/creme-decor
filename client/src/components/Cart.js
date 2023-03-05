@@ -57,7 +57,6 @@ const Cart = () => {
         });
     }
 
-
   return(
     <div>
 
