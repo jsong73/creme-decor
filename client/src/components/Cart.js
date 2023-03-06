@@ -8,7 +8,9 @@ import Auth from "../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import CartItem from "../components/CartItem";
 
-const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
+const stripePromise = loadStripe(`${process.env.STRIPE_PUBLISHABLE_KEY}`);
+console.log(stripePromise)
+
 
 const Cart = () => {
     const [state, dispatch] = useStoreContext();
