@@ -16,6 +16,7 @@ import NoMatch from "./pages/NoMatch";
 import Orderhistory from "./pages/OrderHistory";
 import Signup from "./pages/Signup";
 import Navbar from "../src/components/Navbar";
+import Success from "../src/pages/Success"
 import { StoreProvider } from "./utils/GlobalState";
 
 const httpLink = createHttpLink({
@@ -57,6 +58,8 @@ function App() {
                     <Route path="/products/:id" element={ <Detail />}/>
               
                     <Route path="*" element={ <NoMatch />}/>
+
+                    <Route path="/success" element={ <Success />}/>
 
                   </Routes>
             </StoreProvider>

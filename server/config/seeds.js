@@ -44,7 +44,7 @@ db.once('open', async () => {
     {
       productName: 'Mid-Century Dresser',
       category: categories[3]._id,
-      description:'modern-day woodern dresser',
+      description:'modern-day wooden dresser',
       image: 'mid-century-dresser.jpg',
       price: 100.00,
       quantity: 20,
