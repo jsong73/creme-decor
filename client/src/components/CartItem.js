@@ -41,7 +41,7 @@ const CartItem = ({ item }) => {
         }
     }
 
-    // console.log(state)
+    console.log(state)
 
     return(
         <div>

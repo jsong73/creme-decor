@@ -1,7 +1,7 @@
 import { useLazyQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_CHECKOUT } from "../utils/queries";
-import React , {useEffect } from "react";
+import React , { useEffect } from "react";
 import { idbPromise } from "../utils/helpers";
 import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import Auth from "../utils/auth";
@@ -9,11 +9,11 @@ import { loadStripe } from "@stripe/stripe-js";
 import CartItem from "../components/CartItem";
 
 const stripePromise = loadStripe(`${process.env.STRIPE_PUBLISHABLE_KEY}`);
-console.log(stripePromise)
+// console.log(stripePromise)
 
 const Cart = () => {
     const [state, dispatch] = useStoreContext();
-    const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+    const [getCheckout, { data } ] = useLazyQuery(QUERY_CHECKOUT);
 
     useEffect(() => {
         if (data) {
@@ -22,8 +22,8 @@ const Cart = () => {
           });
         }
       }, [data]);
-    
-   
+      console.log(data)
+      console.log(stripePromise)
 
     useEffect(() => {
         async function getCart () {
@@ -57,6 +57,8 @@ const Cart = () => {
         getCheckout({
             variables: { products: productIds },
         });
+
+        console.log(productIds)
     }
 
   return(
@@ -69,8 +71,10 @@ const Cart = () => {
             {state.cart.map((item) => (
                 <CartItem key={item._id} item={item} />
             ))}
-
-            <p> Subtotal: ${calculateTotal()}</p>
+            
+            <p>
+            <strong> Subtotal: ${calculateTotal()}</strong>
+            </p>
 
             {Auth.loggedIn() ? (
                 <button onClick={handleCheckout}>Checkout</button>
