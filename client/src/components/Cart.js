@@ -11,24 +11,24 @@ import CartItem from "../components/CartItem";
 const stripePromise = loadStripe(`${process.env.STRIPE_PUBLISHABLE_KEY}`);
 console.log(stripePromise)
 
-
 const Cart = () => {
     const [state, dispatch] = useStoreContext();
     const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
-
     useEffect(() => {
-        if(data) {
-            stripePromise.then((res) => {
-                res.redirectToCheckout({ sessionId: data.checkout.session });
-            });
+        if (data) {
+          stripePromise.then((res) => {
+            res.redirectToCheckout({ sessionId: data.checkout.session });
+          });
         }
-    }, [data]);
+      }, [data]);
+    
+   
 
     useEffect(() => {
         async function getCart () {
             const cart = await idbPromise("cart", "get");
-            dispatch({type: ADD_MULTIPLE_TO_CART, products: [...cart]});
+            dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
         }
 
         if (!state.cart.length) {

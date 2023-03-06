@@ -3,7 +3,6 @@ import React, {useEffect} from "react";
 import { idbPromise } from "../utils/helpers";
 import { ADD_ORDER } from "../utils/mutations";
 
-
 function Success() {
     const [addOrder] = useMutation(ADD_ORDER);
 
@@ -20,7 +19,6 @@ function Success() {
                     idbPromise("cart", "delete", item);
                 });
             }
-
             setTimeout(() => {
                 window.location.assign("/")
             }, 3000);
@@ -29,8 +27,14 @@ function Success() {
         saveOrder();
     },[addOrder]);
 
+
+    const style = {
+        textAlign: "center",
+        fontSize: "30px",
+    }
+
     return(
-    <div>
+    <div style={style}>
         <h1>Success!</h1>
         <h2>Thank you for your purchase!</h2>
         <h2>You will now be redirected to the home page.</h2>

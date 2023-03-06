@@ -3,6 +3,7 @@ const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')(`${process.env.STRIPE_SECRET_KEY}`);
 
+
 const resolvers = {
   Query: {
     categories: async () => {
@@ -61,7 +62,7 @@ const resolvers = {
 
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
-          name: products[i].name,
+          productName: products[i].productName,
           description: products[i].description,
           images: [`${url}/images/${products[i].image}`]
         });
