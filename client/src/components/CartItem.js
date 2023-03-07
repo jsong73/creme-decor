@@ -46,6 +46,7 @@ const CartItem = ({ item }) => {
     return(
         <div>
             <img
+                className="mx-auto"
                 src={`/images/${item.image}`}
                 alt={item.image}
                 style={style}
@@ -54,8 +55,9 @@ const CartItem = ({ item }) => {
             <div> {item.productName} </div>
             <p>${item.price}</p>
 
-            <span> Quantity: </span>
+            <span> Qty: </span>
             <input
+            className="border w-5px"
              type="number"
              placeholder="1"
              value={item.purchaseQuantity}

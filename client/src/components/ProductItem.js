@@ -27,9 +27,11 @@ return(
             style={style}
             />
             <h1 className="hover:italic"> {productName} </h1>
+            <p>${price}</p>
+
             </Link>
 
-            <div>${price}</div>
+            
     </div>
 )
 }

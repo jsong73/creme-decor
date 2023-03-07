@@ -90,7 +90,7 @@ const Detail = () => {
 
 
   return (
-    <div className="justify-center text-center ">
+    <div className="6407a031957cdbb0e04d2e6b">
       <Link to="/">  <h1 id="home-name" className="mt-3 text-6xl drop-shadow-2xl"> Créme Decor. </h1> </Link>
 
    <div className="mt-4 mb-4">
@@ -116,10 +116,10 @@ const Detail = () => {
             <p className="underline"> {currentProduct.quantity} left in stock</p>
             
 
-            <button className="mt-4" onClick= {() => {addToCart() ; openModal()}}> Add to Cart </button>
+            <button className="mt-4 mr-4" onClick= {() => {addToCart() ; openModal()}}> Add to Cart </button>
             
             <button 
-              className="mt-4"
+              className="mt-4 "
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick= {removeFromCart}> 
             Remove from Cart

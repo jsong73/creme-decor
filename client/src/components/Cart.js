@@ -62,9 +62,9 @@ const Cart = () => {
     }
 
   return(
-    <div>
+    <div className="justify-center text-center">
 
-    <h1>Cart</h1>
+    <h1>Shopping Cart</h1>
 
     {state.cart.length ? (
         <div>
@@ -72,7 +72,7 @@ const Cart = () => {
                 <CartItem key={item._id} item={item} />
             ))}
             
-            <p>
+            <p className="mt-3 mb-3">
             <strong> Subtotal: ${calculateTotal()}</strong>
             </p>
 
