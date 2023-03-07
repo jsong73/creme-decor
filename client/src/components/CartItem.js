@@ -57,7 +57,7 @@ const CartItem = ({ item }) => {
 
             <span> Qty: </span>
             <input
-            className="border w-5px"
+            className="border w-5px mb-2"
              type="number"
              placeholder="1"
              value={item.purchaseQuantity}

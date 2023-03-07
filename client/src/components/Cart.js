@@ -79,7 +79,7 @@ const Cart = () => {
             {Auth.loggedIn() ? (
                 <b><button onClick={handleCheckout}>Checkout</button></b>
             ) : (
-                <p> Please log in to checkout </p>
+                <p> -Please log in to checkout- </p>
             )}
             </div>
     ) : (
