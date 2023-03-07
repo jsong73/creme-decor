@@ -13,18 +13,9 @@ const OrderHistory = () => {
 
   const style = {
     width:500,
-}
-
-
-//   const style = {
-//     textAlign: "center",
-//     fontSize: "30px",
-// }
-
-  if(!user) {
-  return <div style={style}>No orders placed as of yet!</div>
-  
   }
+
+
 
   return (
     <div>

@@ -23,7 +23,7 @@ const Cart = () => {
         }
       }, [data]);
       console.log(data)
-      console.log(stripePromise)
+    //   console.log(stripePromise)
 
     useEffect(() => {
         async function getCart () {
@@ -58,7 +58,7 @@ const Cart = () => {
             variables: { products: productIds },
         });
 
-        console.log(productIds)
+        // console.log(productIds)
     }
 
   return(
