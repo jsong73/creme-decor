@@ -18,6 +18,7 @@ const style = {
 
 return(
     <div>
+        
             <Link to={`products/${_id}`}>
             <img 
             alt={productName}

@@ -36,6 +36,7 @@ function ProductList() {
   
     return(
         <div>
+            
             <div>
                 {filterProducts().map((product) => (
                     <ProductItem 
