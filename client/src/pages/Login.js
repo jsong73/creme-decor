@@ -53,11 +53,12 @@ const Login = (props) => {
 
             <form 
               id="credentials"
-              className="mt-5 "
+              className="mt-10"
               onSubmit={loginFormHandler}>
 
             <label> Email: </label>
               <input
+              className="border-b-2"
                placeholder="Email"
                name="email"
                type="email"
@@ -67,6 +68,7 @@ const Login = (props) => {
 
             <label> Password: </label>
               <input
+              className="border-b-2"
                placeholder="*****"
                name="password"
                type="password"

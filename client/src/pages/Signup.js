@@ -57,11 +57,12 @@ const Signup = () => {
 
           <form 
               id="credentials"
-              className="mt-5"
+              className="mt-10"
               onSubmit={signupFormHandler}>
 
           <label> First name: </label>
               <input
+              className="border-b-2"
                placeholder="Jane"
                name="firstName"
                type="firstName"
@@ -71,6 +72,7 @@ const Signup = () => {
 
             <label> Last name: </label>
               <input
+              className="border-b-2"
                placeholder="Doe"
                name="lastName"
                type="lastName"
@@ -80,6 +82,7 @@ const Signup = () => {
 
             <label> Email: </label>
               <input
+                className="border-b-2"
                placeholder="janedoe@email.com"
                name="email"
                type="email"
@@ -89,6 +92,7 @@ const Signup = () => {
 
             <label> Password: </label>
               <input
+               className="border-b-2"
                placeholder="*****"
                name="password"
                type="password"
