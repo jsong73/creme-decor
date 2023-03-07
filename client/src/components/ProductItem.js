@@ -17,7 +17,7 @@ const style = {
 }
 
 return(
-    <div>
+    <div className="text-center justify-center">
         
             <Link to={`products/${_id}`}>
             <img 

@@ -91,7 +91,7 @@ const Detail = () => {
 
   return (
     <div>
-      <Link to="/">  <h1 id="home-name" className="mt-10 text-6xl justify-center text-center drop-shadow-2xl"> Créme Decor. </h1> </Link>
+      <Link to="/">  <h1 id="home-name" className="mt-5 text-6xl justify-center text-center drop-shadow-2xl"> Créme Decor. </h1> </Link>
 
        <Link to="/"> Back to Products</Link>
 

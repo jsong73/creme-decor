@@ -11,13 +11,13 @@ const Navbar = () => {
         <div>
             {Auth.loggedIn() ? (
                 <>
-                <ul className="flex flex-col mt-4">
+                <ul>
                     <li>
-                        <button className="block"> <Link to="/orderhistory"> Order History </Link>
+                        <button> <Link to="/orderhistory"> Order History </Link>
                         </button>
                     </li>
                     <li>
-                        <button className="block" onClick={logout}>  Logout
+                        <button onClick={logout}>  Logout
                         </button>
                     </li>
                 </ul>
