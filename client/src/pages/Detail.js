@@ -90,7 +90,7 @@ const Detail = () => {
 
 
   return (
-    <div className="6407a031957cdbb0e04d2e6b">
+    <div className="justify-center text-center ">
       <Link to="/">  <h1 id="home-name" className="mt-3 text-6xl drop-shadow-2xl"> Créme Decor. </h1> </Link>
 
    <div className="mt-4 mb-4">

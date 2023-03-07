@@ -18,7 +18,7 @@ const OrderHistory = () => {
 
 
   return (
-    <div className="6407a031957cdbb0e04d2e6b">
+    <div className="justify-center text-center ">
           <Link to="/"> Back to Products</Link>
           { user ? (
             <>
