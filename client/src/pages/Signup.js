@@ -45,12 +45,20 @@ const Signup = () => {
 
 
   return (
-    <div>
-        <h1> Sign up </h1>
+    <div className="justify-center text-center ">
+       <Link to="/">  <h1 id="home-name" className="mt-3 text-6xl drop-shadow-2xl"> Créme Decor. </h1> </Link>
         
-        <Link to="/">Or continue to login </Link>
+        <h1 
+        className="mt-4"
+        id="credentials"> Sign up 
+        </h1>
+        
+        <Link id="link" className="underline" to="/login">Or continue to login </Link>
 
-          <form onSubmit={signupFormHandler}>
+          <form 
+              id="credentials"
+              className="mt-5"
+              onSubmit={signupFormHandler}>
 
           <label> First name: </label>
               <input

@@ -41,12 +41,21 @@ const Login = (props) => {
 
 
   return (
-    <div>
-        <h1> Log in </h1>
+    <div className="justify-center text-center ">
+        <Link to="/">  <h1 id="home-name" className="mt-3 text-6xl drop-shadow-2xl"> Créme Decor. </h1> </Link>
+            
+            <h1  
+            className="mt-4"
+            id="credentials"> Log in 
+            </h1>
         
-        <Link to="/signup">Or continue to signup</Link>
+            <Link id="link" className="underline" to="/signup">Or continue to signup</Link>
 
-          <form onSubmit={loginFormHandler}>
+            <form 
+              id="credentials"
+              className="mt-5 "
+              onSubmit={loginFormHandler}>
+
             <label> Email: </label>
               <input
                placeholder="Email"
