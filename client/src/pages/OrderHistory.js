@@ -12,9 +12,14 @@ const OrderHistory = () => {
   }
 
   const style = {
-    textAlign: "center",
-    fontSize: "30px",
+    width:500,
 }
+
+
+//   const style = {
+//     textAlign: "center",
+//     fontSize: "30px",
+// }
 
   if(!user) {
   return <div style={style}>No orders placed as of yet!</div>
@@ -27,18 +32,18 @@ const OrderHistory = () => {
           { user ? (
             <>
             <h1>
-              Order History for {user.firstName} {user.lastName}
+            Your order history
             </h1>
             {user.orders.map((order) => (
               <div key={order._id}>
                   <h2>
-                    {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
+                    Purchase made on {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                   </h2>
 
               {order.products.map(({_id, image, productName, price}, index ) => (
                 <div key={index}>
                         <Link to={`/products/${_id}`}>
-                          <img alt={productName} src={`/images/${image}`} />
+                          <img alt={productName} src={`/images/${image}`} style={style}/>
                           <p>{productName}</p>
                       </Link>
                       <div> ${price}</div>

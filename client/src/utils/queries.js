@@ -10,7 +10,7 @@ export const QUERY_USER =gql`
             purchaseDate
             products{
                 _id
-                name
+                productName
                 description
                 price
                 quantity
