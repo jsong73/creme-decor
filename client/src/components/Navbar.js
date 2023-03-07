@@ -8,7 +8,8 @@ const Navbar = () => {
         Auth.logout();
     }
     return(
-        <div>
+        
+        <div id="nav" className="text-right p-3  ">
             {Auth.loggedIn() ? (
                 <>
                 <ul>

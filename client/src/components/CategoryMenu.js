@@ -31,7 +31,7 @@ function CategoryMenu() {
 
 
     return(
-        <div>
+        <div id="category-button" className="text-center justify-center space-x-7 mt-4">
             {categories.map((item) => (
                 <button
                 key={item._id}

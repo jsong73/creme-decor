@@ -17,15 +17,16 @@ const style = {
 }
 
 return(
-    <div className="text-center justify-center">
+    <div>
         
             <Link to={`products/${_id}`}>
             <img 
+            draggable="false"
             alt={productName}
             src={`/images/${image}`}
             style={style}
             />
-            <h1> {productName} </h1>
+            <h1 className="hover:italic"> {productName} </h1>
             </Link>
 
             <div>${price}</div>

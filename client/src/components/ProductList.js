@@ -37,7 +37,7 @@ function ProductList() {
     return(
         <div className="justify-center grid mb-8">
             
-            <div className="columns-3 ">
+            <div id="product-name" className="columns-3 text-center justify-center ">
                 {filterProducts().map((product) => (
                     <ProductItem 
                     key={product._id}

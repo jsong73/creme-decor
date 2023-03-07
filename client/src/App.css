@@ -1,3 +1,31 @@
 #home-name{
     font-family: 'DM Serif Display', serif;
 }
+
+#product-name{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 13px;
+}
+
+#category-button{
+    font-family: 'Epilogue', sans-serif;
+}
+
+#nav{
+    font-family: 'Epilogue', sans-serif;
+}
+
+#detail-font{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 14px;
+}
+
+#detail-product{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 17px;
+}
+
+#back-nav{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 13px;
+}

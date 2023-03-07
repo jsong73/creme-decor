@@ -90,31 +90,42 @@ const Detail = () => {
 
 
   return (
-    <div>
-      <Link to="/">  <h1 id="home-name" className="mt-5 text-6xl justify-center text-center drop-shadow-2xl"> Créme Decor. </h1> </Link>
+    <div className="justify-center text-center ">
+      <Link to="/">  <h1 id="home-name" className="mt-3 text-6xl drop-shadow-2xl"> Créme Decor. </h1> </Link>
 
-       <Link to="/"> Back to Products</Link>
+   <div className="mt-4 mb-4">
+       <Link id="back-nav" to="/"> Back to Products</Link>
 
-       <h1> {currentProduct.productName} </h1>
+       <h1 id="detail-product" className="mt-4"> {currentProduct.productName} </h1>
+
+       </div>
 
       <img 
+        className="mx-auto"
         src={`/images/${currentProduct.image}`}
         alt={currentProduct.productName} 
         style={style}
       />
 
-      <div> {currentProduct.description}</div>
+      <div id="detail-font" className="mt-4 space-y-3">
 
+      <div> {currentProduct.description}</div>
 
       <div>
             <p> ${currentProduct.price} </p>
-            <p> {currentProduct.quantity} left in stock</p>
-            <button onClick= {() => {addToCart() ; openModal()}}> Add to Cart </button>
+            <p className="underline"> {currentProduct.quantity} left in stock</p>
+            
+
+            <button className="mt-4" onClick= {() => {addToCart() ; openModal()}}> Add to Cart </button>
+            
             <button 
+              className="mt-4"
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick= {removeFromCart}> 
             Remove from Cart
             </button>
+
+      </div>
       </div>
 
       <Modal
@@ -127,6 +138,7 @@ const Detail = () => {
 
       </Modal>
 
+     
     </div>
   );
 };
