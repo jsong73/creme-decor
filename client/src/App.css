@@ -25,11 +25,36 @@
     font-size: 17px;
 }
 
+#order-history{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 17px;
+}
+
 #back-nav{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 13px;
+}
+
+#back-page{
     font-family: 'Epilogue', sans-serif;
     font-size: 13px;
 }
 
 #modal{
     font-family: 'Epilogue', sans-serif;
+}
+
+#purchase-date{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 17px;
+}
+
+#history-name{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 14px;
+}
+
+#history-price{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 14px;
 }

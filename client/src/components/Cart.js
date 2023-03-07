@@ -73,11 +73,11 @@ const Cart = () => {
             ))}
             
             <p className="mt-3 mb-3">
-            <strong> Subtotal: ${calculateTotal()}</strong>
+            <div> Subtotal: ${calculateTotal()}</div>
             </p>
 
             {Auth.loggedIn() ? (
-                <button onClick={handleCheckout}>Checkout</button>
+                <b><button onClick={handleCheckout}>Checkout</button></b>
             ) : (
                 <p> Please log in to checkout </p>
             )}
