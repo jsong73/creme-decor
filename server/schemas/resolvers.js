@@ -55,7 +55,6 @@ const resolvers = {
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-
       const order = new Order({ products: args.products });
       const line_items = [];
 
@@ -63,7 +62,7 @@ const resolvers = {
 
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
-          productName: products[i].productName,
+          name: products[i].productName,
           description: products[i].description,
           images: [`${url}/images/${products[i].image}`]
         });
