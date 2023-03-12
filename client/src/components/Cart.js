@@ -7,9 +7,10 @@ import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import Auth from "../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import CartItem from "../components/CartItem";
-// const apiKey = `${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`;
-// const stripePromise = loadStripe(apiKey);
-const stripePromise = loadStripe('pk_test_51Mi4txI4BjjdJMrb8sk9jBVFkHVXOXpdHQeq68oenn4QqfIYhUPHazlwypraU6fXXNtusU9IHguA5Gcl2VaDGas600Eskw4EuT')
+
+const apiKey = `${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`;
+const stripePromise = loadStripe(apiKey);
+
 // console.log(stripePromise)
 // console.log(apiKey)
 
