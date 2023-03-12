@@ -56,7 +56,7 @@ const Login = (props) => {
               className="mt-10"
               onSubmit={loginFormHandler}>
 
-            <label> Email: </label>
+            <label> Email </label>
               <input
               className="border-b-2"
                placeholder="Email"
@@ -66,7 +66,8 @@ const Login = (props) => {
                autoComplete="off"
                onChange={handleChange} />
 
-            <label> Password: </label>
+              <p className="mt-4">
+              <label> Password </label>
               <input
               className="border-b-2"
                placeholder="*****"
@@ -75,12 +76,13 @@ const Login = (props) => {
                value={formState.password}
                autoComplete="off"
                onChange={handleChange} />
+               </p>
 
               
             {error ? (
               <div> {error.message} </div>
             ) : null}
-            <button type="submit"> Submit </button>
+            <button className="mt-4" type="submit"> Submit </button>
 
           </form>
     </div>

@@ -59,8 +59,9 @@ const Signup = () => {
               id="credentials"
               className="mt-10"
               onSubmit={signupFormHandler}>
-
-          <label> First name: </label>
+          
+          <p>
+          <label> First name </label>
               <input
               className="border-b-2"
                placeholder="Jane"
@@ -69,8 +70,10 @@ const Signup = () => {
                value={formState.firstName}
                autoComplete="off"
                onChange={handleChange} />
+          </p>
 
-            <label> Last name: </label>
+          <p className="mt-4">
+            <label> Last name </label>
               <input
               className="border-b-2"
                placeholder="Doe"
@@ -79,8 +82,10 @@ const Signup = () => {
                value={formState.lastName}
                autoComplete="off"
                onChange={handleChange} />
+          </p>
 
-            <label> Email: </label>
+          <p className="mt-4">
+            <label> Email </label>
               <input
                 className="border-b-2"
                placeholder="janedoe@email.com"
@@ -89,8 +94,10 @@ const Signup = () => {
                value={formState.email}
                autoComplete="off"
                onChange={handleChange} />
+          </p>
 
-            <label> Password: </label>
+          <p className="mt-4">
+            <label> Password </label>
               <input
                className="border-b-2"
                placeholder="*****"
@@ -99,12 +106,13 @@ const Signup = () => {
                autoComplete="off"
                value={formState.password}
                onChange={handleChange} />
+          </p>
 
-              
+    
             {error ? (
               <div> {error.message} </div>
             ) : null}
-            <button type="submit"> Submit </button>
+            <button className="mt-4" type="submit"> Submit </button>
 
           </form>
     </div>
