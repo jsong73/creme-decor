@@ -8,7 +8,7 @@ import Auth from "../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import CartItem from "../components/CartItem";
 
-const stripePromise = loadStripe(`${process.env.STRIPE_PUBLISHABLE_KEY}`);
+const stripePromise = loadStripe('pk_test_51Mi4txI4BjjdJMrb8sk9jBVFkHVXOXpdHQeq68oenn4QqfIYhUPHazlwypraU6fXXNtusU9IHguA5Gcl2VaDGas600Eskw4EuT');
 // console.log(stripePromise)
 
 const Cart = () => {
@@ -72,9 +72,9 @@ const Cart = () => {
                 <CartItem key={item._id} item={item} />
             ))}
             
-            <p className="mt-3 mb-3">
-            <div> Subtotal: ${calculateTotal()}</div>
-            </p>
+            <div className="mt-3 mb-3">
+                <div> Subtotal: ${calculateTotal()}</div>
+            </div>
 
             {Auth.loggedIn() ? (
                 <b><button onClick={handleCheckout}>Checkout</button></b>
