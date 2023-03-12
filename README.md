@@ -23,3 +23,6 @@ If you want to test out this website, you can login/signup and browse through th
 
 ## View order history 
 ![image](https://user-images.githubusercontent.com/111620893/223562799-ee349cd5-415f-46e9-84c8-613d2519abae.png)
+
+## Checkout via Stripe  
+![chrome-capture-2023-2-12](https://user-images.githubusercontent.com/111620893/224569823-0f261e6f-8f9c-41b2-a4f6-934683bc7ffb.gif)  
