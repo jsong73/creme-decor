@@ -23,6 +23,7 @@ const Cart = () => {
         }
       }, [data]);
       console.log(data)
+
     //   console.log(stripePromise)
 
     useEffect(() => {

@@ -12,7 +12,7 @@ function Success() {
             const products = cart.map((item) => item._id);
 
             if(products.length){
-                const {data} = await addOrder({variables: {products}});
+                const {data} = await addOrder({ variables: { products }});
                 const productData = data.addOrder.products;
 
                 productData.forEach((item) => {
