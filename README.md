@@ -9,9 +9,6 @@ Creme Decor is a furniture e-commerce site. Users can browse through all the pro
 Front-end: React, Apollo GraphQL Client, Tailwind CSS, Stripe  
 Back-end: Node.js, Apollo GraphQL Server, Express, MongoDB, Mongoose, JWT token authentication, Bcrypt, Stripe  
 
-## Testing  
-If you want to test out this website, you can login/signup and browse through the products.  
-
 ## Log in or sign up  
 ![image](https://user-images.githubusercontent.com/111620893/223561332-2a9986b2-128a-40bf-9274-08779097afa2.png)  
 
