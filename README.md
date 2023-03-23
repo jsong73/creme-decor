@@ -5,9 +5,7 @@ https://creme-decor.herokuapp.com/
 Creme Decor is a furniture e-commerce site. Users can browse through all the products or filter through specific categories to find and purchase items. Users can also view past fufilled orders.
 
 ## Technology 
-
-Front-end: React, Apollo GraphQL Client, Tailwind CSS, Stripe  
-Back-end: Node.js, Apollo GraphQL Server, Express, MongoDB, Mongoose, JWT token authentication, Bcrypt, Stripe  
+Built using the MERN stack. Implemented Stripe API for checkout.  
 
 ## Log in or sign up  
 ![image](https://user-images.githubusercontent.com/111620893/223561332-2a9986b2-128a-40bf-9274-08779097afa2.png)  
