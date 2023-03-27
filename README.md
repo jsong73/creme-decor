@@ -2,7 +2,7 @@
 
 https://creme-decor.herokuapp.com/
 
-Creme Decor is a furniture e-commerce site. Users can browse through all the products or filter through specific categories to find and purchase items. Users can also view past fufilled orders.
+Creme Decor is a furniture e-commerce site. Users can browse through all the products or filter through specific categories to find and purchase items. Users can also view past fufilled orders.  
 
 ## Technology 
 Built using the MERN stack. Implemented Stripe API for checkout.  
