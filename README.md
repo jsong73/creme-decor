@@ -7,6 +7,8 @@ Creme Decor is a furniture e-commerce site. Users can browse through all the pro
 ## Technology 
 Built using the MERN stack. Implemented Stripe API for checkout.  
 
+## Testing
+
 ### Log in or sign up  
 ![image](https://user-images.githubusercontent.com/111620893/223561332-2a9986b2-128a-40bf-9274-08779097afa2.png)  
 
